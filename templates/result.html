@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Interview Result
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+
+        <h2 class="text-center mb-4">
+            AI Interview Feedback
+        </h2>
+
+        <pre style="white-space: pre-wrap; font-size:16px;">
+{{ feedback }}
+        </pre>
+
+        <div class="text-center mt-4">
+
+            <a href="/dashboard" class="btn btn-primary">
+                Back to Dashboard
+            </a>
+
+            <a href="/interview" class="btn btn-success">
+                Start Another Interview
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

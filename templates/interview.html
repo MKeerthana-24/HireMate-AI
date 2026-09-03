@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Interview{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h2>AI Interview</h2>
+
+        <form method="POST">
+
+            <label class="form-label">
+                Select Interview Type
+            </label>
+
+            <select class="form-select" name="topic">
+
+                <option>HR</option>
+
+                <option>Python</option>
+
+                <option>SQL</option>
+
+                <option>Data Analyst</option>
+
+            </select>
+
+            <button class="btn btn-primary mt-4">
+
+                Start Interview
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

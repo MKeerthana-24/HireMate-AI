@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Interview History{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+
+        <h2 class="mb-4">📜 Interview History</h2>
+
+        {% if interviews %}
+
+        <table class="table table-bordered table-hover">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Date</th>
+                    <th>Topic</th>
+                    <th>Score</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for interview in interviews %}
+
+                <tr>
+
+                    <td>{{ interview[3] }}</td>
+
+                    <td>{{ interview[1] }}</td>
+
+                    <td>{{ interview[2] }}</td>
+
+                    <td>
+
+                        <a href="/view_feedback/{{ interview[0] }}"
+                           class="btn btn-primary btn-sm">
+
+                            View
+
+                        </a>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        {% else %}
+
+        <div class="alert alert-info">
+
+            No interviews completed yet.
+
+        </div>
+
+        {% endif %}
+
+        <a href="/dashboard" class="btn btn-secondary">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

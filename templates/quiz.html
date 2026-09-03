@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Interview{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+
+        <h3>🤖 {{ session["topic"] }} Interview</h3>
+
+        <h5 class="text-primary">
+            Question {{ number }}
+        </h5>
+
+        <hr>
+
+        <h5>{{ question }}</h5>
+
+        <form method="POST" action="/interview">
+
+            <input
+                type="hidden"
+                name="question"
+                value="{{ question }}"
+            >
+
+            <textarea
+                name="answer"
+                class="form-control"
+                rows="6"
+                placeholder="Type your answer..."
+                required
+            ></textarea>
+
+            <div class="mt-3">
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="next"
+                    class="btn btn-primary">
+
+                    Next Question
+
+                </button>
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="finish"
+                    class="btn btn-danger">
+
+                    Finish Interview
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
